@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import pandas as pd
 import pickle
-import Resources.data as data
+import resources.data as data
 
 app = Flask(__name__)
 
