@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Road Accident occurrence</title>  
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}" type="text/css">
+</head>
+
+<body>
+ <div>
+     <div class="result">
+         {{ prediction_text }}
+     </div>
+ 
+	<h1 class= "heading" >Road Accident Occurrence</h1>
+	<p class= "subheading"> Choose one attribute from the drop down list and submit!</p>
+	<div class= "container">
+    <form action="{{ url_for('predict')}}" method="post">
+        <div class="subcontainer"> 
+        <div class="box">
+    	<label for="state">State:</label>
+        <select name="state" id="state" required="required">
+            {% for state in states %}
+                <option value="{{state}}">{{state}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="junction">Junction:</label>
+        <select name="junction" id="junction" required="required">
+            {% for junction in junctions %}
+                <option value="{{junction}}">{{junction}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="vechicleAge">Vechicle Age:</label>
+        <select name="vechicleAge" id="vechicleAge" required="required">
+            {% for age in vechicleAge %}
+                <option value="{{age}}">{{age}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="humanAgeSex">Human's Age and Sex:</label>
+        <select name="humanAgeSex" id="humanAgeSex" required="required">
+            {% for age_sex in humanAgeSex %}
+                <option value="{{age_sex}}">{{age_sex}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="personWithoutPrecautions">Person Without Precautions:</label>
+        <select name="personWithoutPrecautions" id="personWithoutPrecautions" required="required">
+            {% for person in personWithoutPrecautions %}
+                <option value="{{person}}">{{person}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="areas">Area:</label>
+        <select name="areas" id="areas" required="required">
+            {% for area in areas %}
+                <option value="{{area}}">{{area}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="typeOfPlace">Type Of Place:</label>
+        <select name="typeOfPlace" id="typeOfPlace" required="required">
+            {% for type in typeOfPlace %}
+                <option value="{{type}}">{{type}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="vehicleLoad">Vehicle Load:</label>
+        <select name="vehicleLoad" id="vehicleLoad" required="required">
+            {% for load in vehicleLoad %}
+                <option value="{{load}}">{{load}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="trafficRulesViolation">Traffic Rules Violation:</label>
+        <select name="trafficRulesViolation" id="trafficRulesViolation" required="required">
+            {% for violation in trafficRulesViolation %}
+                <option value="{{violation}}">{{violation}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="weather">Weather:</label>
+        <select name="weather" id="weather" required="required">
+            {% for w in weather %}
+                <option value="{{w}}">{{w}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="vehicleTypeSex">Vehicle Type and Sex:</label>
+        <select name="vehicleTypeSex" id="vehicleTypeSex" required="required">
+            {% for type in vehicleTypeSex %}
+                <option value="{{type}}">{{type}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="roadType">Road Type:</label>
+        <select name="roadType" id="roadType" required="required">
+            {% for type in roadType %}
+                <option value="{{type}}">{{type}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="License">License Type:</label>
+        <select name="License" id="License" required="required">
+            {% for type in License %}
+                <option value="{{type}}">{{type}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div class="box">
+        <label for="time">Time:</label>
+        <select name="time" id="time" required="required">
+            {% for t in time %}
+                <option value="{{t}}">{{t}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        </div>
+        <div class="submitcontainer"> 
+        <button type="submit" >Submit</button>
+        </div>
+    </form>
+    </div>
+
+ </div>
+</body>
+</html>
